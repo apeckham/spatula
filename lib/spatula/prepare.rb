@@ -69,7 +69,7 @@ module Spatula
 
     def install_ruby
       ssh "curl -L 'ftp://ftp.ruby-lang.org/pub/ruby/#{ruby_path}' | tar xvzf -"
-      ssh "cd ruby-#{ruby_version} && ./configure && make && #{sudo} make install"
+      ssh "cd ruby-#{ruby_version} && ./configure --prefix=/usr && make && #{sudo} make install"
     end
 
     def install_rubygems
